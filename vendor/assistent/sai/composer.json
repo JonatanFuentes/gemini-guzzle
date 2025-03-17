@@ -1,0 +1,84 @@
+{
+    "name": "assistent/sai",
+    "type": "library",
+    "description": "SAI (Sistema de Asistencia Inteligente) es una librería de PHP que permite crear asistentes virtuales basados en ChatGPT para aplicativos web. Con SAI, podrás controlar las funciones del aplicativo SAS mediante lenguaje natural, permitiendo a los usuarios realizar tareas complejas de manera más eficiente. SAI está diseñada para ser fácil de integrar en cualquier aplicativo SAS y cuenta con una lista configurable de palabras no permitidas para evitar usos inapropiados del asistente virtual. Además, SAI utiliza la inteligencia artificial de ChatGPT para mejorar la capacidad del asistente virtual para entender y responder preguntas de los usuarios de manera efectiva.",
+    "keywords": [
+        "chatbot",
+        "inteligencia artificial",
+        "lenguaje natural",
+        "asistente virtual",
+        "automatización",
+        "aplicaciones SAS",
+        "interfaz de usuario",
+        "desarrollo de software",
+        "biblioteca de funciones",
+        "Laravel"
+    ],
+    "license": "MIT",
+    "require-dev": {
+        "ext-curl": "*"
+    },
+    "authors": [
+        {
+            "name": "Carlos Andres Arevalo Cortes",
+            "email": "carevalo2205@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\Principles\\": "app/Principles",
+            "Assistent\\Sai\\Src\\": "src/",
+            "Assistent\\Sai\\Src\\Principles\\": "src/principles/",
+            "Assistent\\Sai\\Src\\Providers\\": "src/providers/",
+            "Assistent\\Sai\\Src\\Facades\\": "src/facades/",
+            "Assistent\\Directives\\": "app/Directives/",
+            "Assistent\\Sai\\Src\\Console\\Commands\\": "src/commands/",
+            "Assistent\\Sai\\Src\\Helpers\\": "src/helpers/",
+            "Assistent\\Sai\\Src\\Helpers\\Pattern\\Methods\\": "src/helpers/pattern/methods/",
+            "Assistent\\Sai\\Src\\Helpers\\Pattern\\Implementations\\": "src/helpers/pattern/implementations/",
+            "Assistent\\Sai\\Src\\Helpers\\Pattern\\": "src/helpers/pattern/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "allow-override": {
+            "assistent/sai": "dev"
+        },
+        "laravel": {
+            "providers": [
+                "Assistent\\Sai\\Src\\Providers\\AssistentServiceProvider"
+            ],
+            "aliases": {
+                "Sai": "Assistent\\Sai\\Src\\Facades\\Sai"
+            },
+            "allow-overrides": {
+                "assistent/sai": "dev-develop"
+            },
+            "publish": {
+                "config": [
+                    {
+                        "source": "config/sai.php",
+                        "destination": "sai.php"
+                    }
+                ],
+                "controllers": [
+                    {
+                        "source": "app/Http/Controllers/SaiController.php",
+                        "destination": "app/Http/Controllers/SaiController.php"
+                    }
+                ],
+                "directives": [
+                    {
+                        "source": "app/Directives",
+                        "destination": "app/Directives"
+                    }
+                ]
+            }
+        }
+
+
+    },
+    "version": "3.5.0"
+
+}
